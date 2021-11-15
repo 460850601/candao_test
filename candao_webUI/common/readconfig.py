@@ -17,6 +17,7 @@ from config.conf import cm
 
 HOST = 'HOST'
 executable = 'executable'
+MAX_LOG_FILE = 'MAX_LOG_FILE'
 
 
 class ReadConfig(object):
@@ -42,6 +43,10 @@ class ReadConfig(object):
     @property
     def executable(self):
         return self._get(executable, executable)
+
+    @property
+    def max_log_file(self):
+        return int(self._get(MAX_LOG_FILE, MAX_LOG_FILE))
 
 
 ini = ReadConfig()

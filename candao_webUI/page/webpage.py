@@ -8,14 +8,8 @@
   @time: 2021/11/7 20:24
   @desc:
 """
-from selenium import webdriver
 
 from utils.loggers import log
-
-"""
-selenium基类
-本文件存放了selenium基类的封装方法
-"""
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
@@ -27,7 +21,6 @@ sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))
 
 from config.conf import cm
 from utils.times import sleep
-from utils import loggers
 
 
 log = log
@@ -37,6 +30,7 @@ cm = cm
 class WebPage(object):
     """
     selenium基类
+    本文件存放了selenium基类的封装方法
     """
 
     def __init__(self, driver):

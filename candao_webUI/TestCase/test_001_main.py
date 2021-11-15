@@ -9,11 +9,7 @@
   @desc:
 """
 
-import re, os, sys
 import allure
-
-# sys.path.append((os.path.abspath(os.path.join(os.path.dirname(__file__), '../'))))
-
 import pytest
 
 from common.readconfig import ini

@@ -12,8 +12,9 @@ from config.conf import cm
 import pytest
 from py.xml import html
 from selenium import webdriver
-
+from utils.check_driver import ck
 from common.readconfig import ini
+from utils.del_old_log import del_log
 
 CHROMEDRIVER_PATH = cm.DRIVER_PATH + '\chromedriver.exe'
 IEDRIVER_PATH = cm.DRIVER_PATH + '\IEDriverServer.exe'
@@ -23,8 +24,7 @@ TYPES = {'firefox': webdriver.Firefox, 'chrome': webdriver.Chrome, 'ie': webdriv
 EXECUTABLE_PATH = {'firefox': 'wires', 'chrome': CHROMEDRIVER_PATH, 'ie': IEDRIVER_PATH,
                    'phantomjs': PHANTOMJSDRIVER_PATH}
 driver = None
-# cm = cm
-from utils.check_driver import ck
+
 
 class UnSupportBrowserTypeError:
     pass
@@ -32,6 +32,7 @@ class UnSupportBrowserTypeError:
 
 @pytest.fixture(scope='session', autouse=True)
 def drivers(request):
+    del_log.delete_log()
     global driver
     browser_type = ini.executable
     _type = browser_type.lower()
