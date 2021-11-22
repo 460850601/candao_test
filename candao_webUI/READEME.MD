@@ -1,0 +1,16 @@
+目录结构：
+|---主目录
+    |--common
+    |--config
+    |--datas
+    |--drivers
+    |--log
+    |--page
+    |--page_element
+    |--page_object
+    |--script
+    |--TestCase
+    |--utils
+    |--conftest.py
+    |--pytest.ini
+    |--Run_Testcase.py
